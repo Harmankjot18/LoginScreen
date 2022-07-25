@@ -6,6 +6,7 @@ import android.widget.*
 import android.view.View
 import android.content.Intent
 import androidx.core.widget.doOnTextChanged
+import android.widget.Toast
 
 class MainActivity : AppCompatActivity() {
     lateinit var etName: EditText
@@ -54,6 +55,7 @@ class MainActivity : AppCompatActivity() {
             }
             else if (phone.isNullOrEmpty()){
                 etPhoneNumber.error=resources.getString(R.string.please_enter_phoneNumber)
+                etPhoneNumber.requestFocus()
             }
             else {
                 Toast.makeText(
