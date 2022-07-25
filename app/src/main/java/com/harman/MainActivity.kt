@@ -3,9 +3,9 @@ package com.harman
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.*
+import android.view.View
 import android.content.Intent
 import androidx.core.widget.doOnTextChanged
-
 
 class MainActivity : AppCompatActivity() {
     lateinit var etName: EditText
@@ -38,6 +38,7 @@ class MainActivity : AppCompatActivity() {
             System.out.println("Clicked")
             var name = etName.text.toString()
             var password = etPassword.text.toString()
+            var phone = etPhoneNumber.text.toString()
             System.out.println("name ; $name")
             if (name.isNullOrEmpty()) {
             var name = etName.text.toString()
@@ -46,7 +47,15 @@ class MainActivity : AppCompatActivity() {
             } else if (password.isNullOrEmpty()) {
                 etPassword.error = resources.getString(R.string.please_enter_password)
                 etPassword.requestFocus()
-            } else {
+            }
+            else if(password.length<6){
+                etPassword.error=resources.getString(R.string.please_enter_password)
+                etPassword.requestFocus()
+            }
+            else if (phone.isNullOrEmpty()){
+                etPhoneNumber.error=resources.getString(R.string.please_enter_phoneNumber)
+            }
+            else {
                 Toast.makeText(
                     this, resources.getString(R.string.login_sucessfully),
                     Toast.LENGTH_LONG
@@ -55,5 +64,6 @@ class MainActivity : AppCompatActivity() {
                 startActivity(intent)
                 finish()
             }
+    }
     }
 }

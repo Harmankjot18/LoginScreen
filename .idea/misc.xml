@@ -3,6 +3,10 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/LoginScreen/app/src/main/res/layout/activity_forgot_password.xml" value="0.20416666666666666" />
+        <entry key="..\:/LoginScreen/app/src/main/res/layout/activity_forgot_password2.xml" value="0.20416666666666666" />
+        <entry key="..\:/LoginScreen/app/src/main/res/layout/activity_main.xml" value="0.20416666666666666" />
+        <entry key="..\:/LoginScreen/app/src/main/res/layout/activity_otpactivity.xml" value="0.33" />
         <entry key="..\:/Users/intel/AndroidStudioProjects/LoginDisplay/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.19" />
         <entry key="..\:/Users/intel/AndroidStudioProjects/LoginDisplay/app/src/main/res/drawable/ic_launcher_background.xml" value="0.19" />
         <entry key="..\:/Users/intel/AndroidStudioProjects/LoginDisplay/app/src/main/res/layout-w936dp/activity_forgot_password.xml" value="0.1" />
