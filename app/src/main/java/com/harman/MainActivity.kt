@@ -9,9 +9,9 @@ import androidx.core.widget.doOnTextChanged
 import android.widget.Toast
 
 class MainActivity : AppCompatActivity() {
-    lateinit var etName: EditText
-    lateinit var etPassword: EditText
-    lateinit var etPhoneNumber : EditText
+    lateinit var  etName:EditText
+    lateinit var etPassword:EditText
+    lateinit var etPhoneNumber:EditText
     lateinit var tvForgotPassword: TextView
     lateinit var btnLogin: Button
 
@@ -21,8 +21,13 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
         etName = findViewById(R.id.etName)
         etPassword = findViewById(R.id.etPassword)
-        tvForgotPassword = findViewById(R.id.tvForgotPassword)
+        etPhoneNumber = findViewById(R.id.etPhonenumber)
         btnLogin = findViewById(R.id.btnLogin)
+        tvForgotPassword = findViewById(R.id.tvForgotPassword)
+        tvForgotPassword.setOnClickListener {
+            var intent = Intent(this, ForgotPasswordActivity::class.java)
+            startActivity(intent)
+        }
 
         etPassword.doOnTextChanged{text, start, before, count ->
 
@@ -32,6 +37,11 @@ class MainActivity : AppCompatActivity() {
         else{
             etPassword.error=null
         }
+            etPhoneNumber.doOnTextChanged { text, start, before, count ->
+                if((text?.length ?:0) <10){
+                    etPhoneNumber.error = resources.getString(R.string.enter_phone)
+                }
+            }
 
         }
         btnLogin.setOnClickListener {
@@ -64,8 +74,7 @@ class MainActivity : AppCompatActivity() {
                 ).show()
                 var intent = Intent(this, ForgotPasswordActivity::class.java)
                 startActivity(intent)
-                finish()
-            }
     }
     }
+}
 }
