@@ -14,7 +14,7 @@ xmlns:tools="http://schemas.android.com/tools"
         android:layout_gravity="center"
         tools:context="com.harman.MainActivity">
 
-        <TextView
+        <Textview
             android:drawableTop="@drawable/ic_baseline_notifications_24"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
@@ -23,7 +23,7 @@ xmlns:tools="http://schemas.android.com/tools"
             android:textColor="@color/black"
             android:textSize="42sp">
 
-        </TextView>
+        </Textview>
 
         <EditText
             android:id="@+id/etName"
@@ -34,9 +34,7 @@ xmlns:tools="http://schemas.android.com/tools"
             android:hint="@string/login_username"
             android:inputType="textEmailAddress"
             android:textSize="26sp"
-            android:digits="qwertyuiopasdfghjklzxcvbnmQWERTYUIOPASDFGHJKLLZXCVBNM"
-
-            >
+            android:digits="qwertyuiopasdfghjklzxcvbnmQWERTYUIOPASDFGHJKLLZXCVBNM">
 
         </EditText>
 
@@ -53,7 +51,7 @@ xmlns:tools="http://schemas.android.com/tools"
         </EditText>
 
         <EditText
-            android:id="@+id/etPhonenumber"
+            android:id="@+id/etPhoneNumber"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:inputType="phone"

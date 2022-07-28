@@ -7,6 +7,7 @@ import android.view.View
 import android.content.Intent
 import androidx.core.widget.doOnTextChanged
 import android.widget.Toast
+import android.graphics.ColorSpace
 
 class MainActivity : AppCompatActivity() {
     lateinit var  etName:EditText
@@ -21,7 +22,7 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
         etName = findViewById(R.id.etName)
         etPassword = findViewById(R.id.etPassword)
-        etPhoneNumber = findViewById(R.id.etPhonenumber)
+        etPhoneNumber = findViewById(R.id.etPhoneNumber)
         btnLogin = findViewById(R.id.btnLogin)
         tvForgotPassword = findViewById(R.id.tvForgotPassword)
         tvForgotPassword.setOnClickListener {
@@ -34,9 +35,10 @@ class MainActivity : AppCompatActivity() {
         if ((text?.length ?:0) < 6) {
             etPassword.error = resources.getString(R.string.please_enter_password)
         }
-        else{
-            etPassword.error=null
+            else{
+                etPassword.error==null
         }
+
             etPhoneNumber.doOnTextChanged { text, start, before, count ->
                 if((text?.length ?:0) <10){
                     etPhoneNumber.error = resources.getString(R.string.enter_phone)
@@ -45,7 +47,6 @@ class MainActivity : AppCompatActivity() {
 
         }
         btnLogin.setOnClickListener {
-         etName.text.clear()
             System.out.println("Clicked")
             var name = etName.text.toString()
             var password = etPassword.text.toString()
